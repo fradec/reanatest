@@ -1,21 +1,21 @@
 import React from 'react'
-import {View, Text, StyleSheet, ActivityIndicator} from 'react-native'
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
 
 export default class About extends React.Component {
+
   render () {
     return (
       <View style={style.view}>
         <Text style={style.title}>
-          À propos de moi
+          À propos de l'application
         </Text>
         <Text>
-          Lorem gjqevbz zhut zmm zmkaqb
+          Cette première application en ReactNative est dédiée à connaître la météo par ville.
         </Text>
       </View>
     )
   }
 }
-
 
 const style = StyleSheet.create({
   view: {
@@ -23,7 +23,6 @@ const style = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    marginBottom: 20,
-    marginTop: 20
+    marginVertical: 25,
   }
 })

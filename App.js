@@ -1,18 +1,40 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from 'react'
 import About from './components/About.js'
 import Search from './components/Search.js'
-import { TabNavigator } from 'react-navigation'
+import { Text, View } from 'react-native'
+import { createAppContainer } from 'react-navigation'
+import { createBottomTabNavigator } from 'react-navigation-tabs'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
-const Tabs = TabNavigator({
-  Search: { screen: Search },
-  About: { screen: About }
-})
+const TabNavigator = createBottomTabNavigator(
+{
+  Accueil: About,
+  Recherche: Search,
+},
+{
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === 'Accueil') {
+          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+          // Sometimes we want to add badges to some icons.
+          // You can check the implementation below.
+          // IconComponent = HomeIconWithBadge;
+        } else if (routeName === 'Recherche') {
+          iconName = `ios-search`;
+        }
 
-export default class App() {
-  return (
-    <View style={{marginVertical: 40, marginHorizontal: 15}}>
-      <Tabs />
-    </View>
-  );
-}
+        // You can return any component that you like here!
+        return <IconComponent name={iconName} size={25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  }
+)
+
+export default createAppContainer(TabNavigator)

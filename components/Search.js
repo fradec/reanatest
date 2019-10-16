@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput } from 'react-native'
+import { TextInput, StyleSheet, View } from 'react-native'
 
 export default class Search extends React.Component {
 
@@ -18,11 +18,26 @@ export default class Search extends React.Component {
 
   render () {
     return (
-      <TextInput
-        onChangeText={(text) => this.setCity(text)}
-        style={{ height: 40, borderColor: 'gray', borderWidth: 1, paddingHorizontal: 10 }}
-        value={this.state.city}
-      />
+      <View style={style.view}>
+        <TextInput
+          onChangeText={(text) => this.setCity(text)}
+          style={style.search}
+          value={this.state.city}
+        />
+      </View>
     )
   }
 }
+
+const style = StyleSheet.create({
+  search: {
+    marginVertical: 25,
+    height: 40,
+    borderColor: 'grey',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+  },
+  view: {
+    margin: 15
+  }
+})
