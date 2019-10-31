@@ -38,6 +38,7 @@ const style = StyleSheet.create({
     paddingHorizontal: 10,
   },
   view: {
-    margin: 15
+    margin: 15,
+    backgroundColor: 'red'
   }
 })
