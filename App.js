@@ -2,7 +2,7 @@ import React from 'react'
 import About from './components/About.js'
 import Search from './components/Search.js'
 import { Text, View } from 'react-native'
-import { createAppContainer } from 'react-navigation'
+import { createAppContainer, withNavigation } from 'react-navigation'
 import { createBottomTabNavigator } from 'react-navigation-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 

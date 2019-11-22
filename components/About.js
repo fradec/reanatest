@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
+import { View, Text, StyleSheet, ActivityIndicator, Button } from 'react-native'
 
 export default class About extends React.Component {
 
@@ -12,6 +12,10 @@ export default class About extends React.Component {
         <Text>
           Cette première application en ReactNative est dédiée à connaître la météo par ville.
         </Text>
+        <Button
+          onPress={() => this.props.navigation.navigate('Search')}
+          title='Recherche'
+        />
       </View>
     )
   }

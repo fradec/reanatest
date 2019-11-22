@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput, StyleSheet, View } from 'react-native'
+import { TextInput, StyleSheet, View, Button } from 'react-native'
 
 export default class Search extends React.Component {
 
@@ -24,6 +24,10 @@ export default class Search extends React.Component {
           style={style.search}
           value={this.state.city}
         />
+        <Button
+          onPress={() => this.submit()}
+          title='Rechercher'
+        />
       </View>
     )
   }
@@ -39,6 +43,6 @@ const style = StyleSheet.create({
   },
   view: {
     margin: 15,
-    backgroundColor: 'red'
+    // backgroundColor: 'red'
   }
 })
